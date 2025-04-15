@@ -1,0 +1,75 @@
+installed packages :
+
+xorg-xwininfo xorg-xwayland xorg-xsetroot xorg-xrefresh xorg-xrdb xorg-xrandr xorg-xmodmap xorg-xkill xorg-xkbcomp xorg-xinput xorg-xinit xorg-xhost xorg-xev xorg-xdpyinfo xorg-xcursorgen xorg-xauth xorg-setxkbmap xorg-sessreg xorg-server-xvfb xorg-server-xnest xorg-server-xephyr xorg-server-devel xorg-server-common xorg-server xorg-mkfontscale xorg-iceauth xorg-fonts-encodings xorg-fonts-75dpi xorg-fonts-100dpi xorg-font-util xorg-bdftopcf xf86-video-vesa xdg-utils xdg-user-dirs xcolor-git wireplumber vlc vim unzip ttf-nerd-fonts-symbols thunar-volman thunar telegram-desktop sxhkd simple-mtpfs sddm-runit runit rofi qt6ct qt5ct polybar pipewire-pulse pipewire-jack pipewire-alsa pipewire picom pavucontrol otf-font-awesome ocs-url nvidia-utils nvidia-settings nvidia networkmanager-runit networkmanager network-manager-applet neofetch alacritty alsa-utils android-tools android-udev automounter base base-devel blueman bluez bluez-runit bluez-utils bspwm btop cmatrix cmus cups-runit dosfstools efibootmgr elogind-runit emacs feh flameshot gimp git grub gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb intel-ucode jmtpfs kcolorchooser kdeconnect libesmtp loupe lxappearance lxqt-policykit man-db mesa-utils gnome-disk-utility dunst
+---------------------------------------------------------
+
+config your touchpad
+
+
+to enable your touch pad features
+
+
+sudo mkdir -p /etc/X11/xorg.conf.d
+
+sudo vim /etc/X11/xorg.conf.d/40-libinput.conf
+
+
+and put this
+
+
+
+Section "InputClass"
+    Identifier "Touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "TappingDrag" "on"
+    Option "NaturalScrolling" "true" # optional but nice
+EndSection
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+some guides and scripts to control : feeze mode(freeze) , sleep mode(mem) , and hybernate mode(disk)
+
+
+
+feeze mode (freeze) :
+
+-The lightest sleep state. The system enters a very low-power mode but stays partially active.
+-The CPU stops processing, but RAM stays powered, and devices can still trigger wake-up events.
+
+
+
+sleep mode (mem):
+
+-This is the standard sleep mode (what most people mean when they say "sleep").
+-The system powers down almost everything except RAM, so data stays in memory, but power consumption is very low.
+
+
+
+hybernate mode (disk):
+
+-Saves the entire system state to disk (swap partition or file) and completely powers off the system.
+-When you turn it back on, it restores everything from disk.
+-Takes longer to wake up but uses zero power while suspended.
+-Requires proper swap space setup.
+
+
+you can see them all in : /sys/power/state
+
+
+
+put files that are in  
+/home/dataman/Projects/AdvanceComputer/RUNITARTIX
+
+
+
+if your pipewire isn't working ... for pipewire in it's place  :
+
+/etc/pipewire/
