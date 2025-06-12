@@ -1,0 +1,11 @@
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+export XCURSOR_THEME="Night Diamond (Blue)"
+export XCURSOR_SIZE=24
+
+
+feh --bg-scale /path/to/your/wallpaper.jpg
+xsetroot -cursor_name left_ptr
+picom &
+exec dbus-run-session bspwm
+

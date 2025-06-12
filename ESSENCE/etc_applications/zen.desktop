@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/dataman/Programs/zen/zen/zen
+Name=Web Browser
+Icon=/home/dataman/Programs/zen/zen/browser/chrome/icons/default/default128.png

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=zed
+GenericName=Modern GUI based Editor
+Icon=/home/dataman/.local/share/icons/Gruvbox-Plus-Dark/apps/scalable/zed.svg
+Exec=/home/dataman/Programs/zed/zed.app/bin/zed
+Terminal=false
